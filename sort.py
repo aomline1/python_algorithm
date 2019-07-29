@@ -58,6 +58,18 @@ def shell_sort(list):
             while j>=0 and list[j]>list[i]:
                 list[j+grap]=list[j]
                 j-=grap
-
-
+#快速排序
+'''def swap(list,i,j):
+    temp=list[i]
+    list[i]=list[j]
+    list[j]=temp'''
+def quicksort(list):
+    if len(list)<2:
+        return list
+    else:
+        pivot=list[0]
+        less=[i for i in list[1:] if i <pivot]
+        greater=[i for i in list[1:] if i >pivot]
+        return quicksort(less)+[pivot]+quicksort(greater)
+#堆排序
 
